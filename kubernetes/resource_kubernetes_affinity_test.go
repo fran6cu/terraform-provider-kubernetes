@@ -217,6 +217,9 @@ func TestAccKubernetesPod_with_pod_anti_affinity_with_preferred_during_schedulin
 func testAccKubernetesPodConfigWithNodeAffinityWithRequiredDuringSchedulingIgnoredDuringExecution(podName, imageName string) string {
 	return fmt.Sprintf(`
 	resource "kubernetes_pod" "test" {
+		lifecycle {
+			ignore_changes = [ metadata[0].annotations ]
+		}
 		metadata {
 			labels = {
 				app = "pod_label"
@@ -254,6 +257,9 @@ func testAccKubernetesPodConfigWithNodeAffinityWithRequiredDuringSchedulingIgnor
 func testAccKubernetesPodConfigWithNodeAffinityWithPreferredDuringSchedulingIgnoredDuringExecution(podName, imageName string) string {
 	return fmt.Sprintf(`
 	resource "kubernetes_pod" "test" {
+		lifecycle {
+			ignore_changes = [ metadata[0].annotations ]
+		}
 		metadata {
 			labels = {
 				app = "pod_label"
@@ -292,6 +298,9 @@ func testAccKubernetesPodConfigWithNodeAffinityWithPreferredDuringSchedulingIgno
 func testAccKubernetesPodConfigWithPodAffinityWithRequiredDuringSchedulingIgnoredDuringExecution(podName, imageName string) string {
 	return fmt.Sprintf(`
 	resource "kubernetes_pod" "test" {
+		lifecycle {
+			ignore_changes = [ metadata[0].annotations ]
+		}
 		metadata {
 			labels = {
 				app = "pod_label"
@@ -325,6 +334,9 @@ func testAccKubernetesPodConfigWithPodAffinityWithRequiredDuringSchedulingIgnore
 func testAccKubernetesPodConfigWithPodAffinityWithPreferredDuringSchedulingIgnoredDuringExecution(podName, imageName string) string {
 	return fmt.Sprintf(`
 	resource "kubernetes_pod" "test" {
+		lifecycle {
+			ignore_changes = [ metadata[0].annotations ]
+		}
 		metadata {
 			labels = {
 				app = "pod_label"
@@ -362,6 +374,9 @@ func testAccKubernetesPodConfigWithPodAffinityWithPreferredDuringSchedulingIgnor
 func testAccKubernetesPodConfigWithPodAntiAffinityWithRequiredDuringSchedulingIgnoredDuringExecution(podName, imageName string) string {
 	return fmt.Sprintf(`
 	resource "kubernetes_pod" "test" {
+		lifecycle {
+			ignore_changes = [ metadata[0].annotations ]
+		}
 		metadata {
 			labels = {
 				app = "pod_label"
@@ -395,6 +410,9 @@ func testAccKubernetesPodConfigWithPodAntiAffinityWithRequiredDuringSchedulingIg
 func testAccKubernetesPodConfigWithPodAntiAffinityWithPreferredDuringSchedulingIgnoredDuringExecution(podName, imageName string) string {
 	return fmt.Sprintf(`
 	resource "kubernetes_pod" "test" {
+		lifecycle {
+			ignore_changes = [ metadata[0].annotations ]
+		}
 		metadata {
 			labels = {
 				app = "pod_label"
